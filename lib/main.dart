@@ -8,15 +8,37 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
+  Widget get _pageContent {
+    return const HomeScreen();
+  }
+
+  Widget get _flutterBanner {
+    return Banner(
+      message: "Flutter",
+      location: BannerLocation.topEnd,
+      color: Colors.blue,
+      child: _pageContent,
+    );
+  }
+
+  Widget get _body {
     return MaterialApp(
       title: 'Site Roni Paschoal',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
+        body: _flutterBanner,
+      ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _body;
   }
 }
