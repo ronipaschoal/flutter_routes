@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:roni_site_2_0/home/home_screen.dart';
+import 'package:roni_site_2_0/pages/home/home_screen.dart';
+import 'package:roni_site_2_0/ui/flutter_banner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,19 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  Widget get _pageContent {
-    return const HomeScreen();
-  }
-
-  Widget get _flutterBanner {
-    return Banner(
-      message: "Flutter",
-      location: BannerLocation.topEnd,
-      color: Colors.blue,
-      child: _pageContent,
-    );
-  }
 
   Widget get _body {
     return MaterialApp(
@@ -29,10 +17,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: Scaffold(
+      home: const Scaffold(
         extendBody: true,
         extendBodyBehindAppBar: true,
-        body: _flutterBanner,
+        body: FlutterBanner(child: HomeScreen()),
       ),
     );
   }
