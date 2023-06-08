@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:roni_site_2_0/pages/home/home_screen.dart';
-import 'package:roni_site_2_0/ui/flutter_banner.dart';
+import 'package:roni_site_2_0/config/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,24 +8,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static const String _title = 'Site Roni Paschoal';
+  static const Color _brandColor = Colors.yellow;
+
   Widget get _body {
-    return MaterialApp(
-      title: 'Site Roni Paschoal',
+    return MaterialApp.router(
+      title: _title,
       debugShowCheckedModeBanner: false,
+      routerConfig: RpRoutes.router,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
+        colorScheme: ColorScheme.fromSeed(seedColor: _brandColor),
         useMaterial3: true,
-      ),
-      home: const Scaffold(
-        extendBody: true,
-        extendBodyBehindAppBar: true,
-        body: FlutterBanner(child: HomeScreen()),
       ),
     );
   }
 
   @override
-  Widget build(BuildContext context) {
-    return _body;
-  }
+  Widget build(BuildContext context) => _body;
 }

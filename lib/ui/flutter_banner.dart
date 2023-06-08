@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 
-class FlutterBanner extends StatelessWidget {
+class RpFlutterBanner extends StatelessWidget {
   final Widget child;
-  const FlutterBanner({
+
+  const RpFlutterBanner({
     super.key,
     required this.child,
   });
 
+  static const String _message = 'Flutter';
+  static const Color _bannerColor = Colors.blue;
+
   Widget get _body {
     return Banner(
-      message: 'Flutter',
       location: BannerLocation.topEnd,
-      color: Colors.blue,
+      message: _message,
+      color: _bannerColor,
       child: child,
     );
   }
 
   @override
-  Widget build(BuildContext context) {
-    return _body;
-  }
+  Widget build(BuildContext context) => _body;
 }
