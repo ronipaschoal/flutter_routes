@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Logo extends StatelessWidget {
+class RpLogo extends StatelessWidget {
   final Size size;
-  const Logo({
+  const RpLogo({
     super.key,
     this.size = const Size(80, 80),
   });

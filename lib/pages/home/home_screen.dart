@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(),
+          const RpLogo(),
           const SizedBox(height: 16.0),
           const SizedBox(
             width: 280.0,
