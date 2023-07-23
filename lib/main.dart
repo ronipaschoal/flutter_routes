@@ -8,8 +8,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const String _title = 'Site Roni Paschoal';
-  static const Color _brandColor = Colors.yellow;
+  static const String _title = 'Roni Paschoal';
+  static const Color _brandColor = Colors.blue;
 
   Widget get _body {
     return MaterialApp.router(
